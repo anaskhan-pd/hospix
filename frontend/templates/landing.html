@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Hospix — Modern hospital management platform. Manage patients, appointments, staff and analytics from one beautiful dashboard." />
+    <title>Hospix — Modern Hospital Management Platform</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}" />
+  </head>
+  <body>
+
+    <!-- ═══════════════════════════════════════
+         NAVBAR
+         ═══════════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+      <div class="container">
+        <a href="#" class="nav-logo">hos<span>pix</span></a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="theme-toggle-btn" aria-label="Toggle theme">
+            <i class="bi bi-sun-fill"></i>
+          </button>
+          <a href="/app" class="btn-nav-login">Log in</a>
+          <a href="/app" class="btn-nav-cta">Get Started</a>
+          <button class="nav-mobile-toggle" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero-glow-bg"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="bi bi-lightning-charge-fill"></i>
+            Now with real-time analytics
+          </div>
+
+          <h1>
+            Healthcare Operations,<br />Reimagined for the<br />
+            <span class="text-gradient">Modern Era.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Manage patients, appointments, staff and analytics from one beautiful platform. Built for modern clinics and hospitals.
+          </p>
+
+          <div class="hero-actions">
+            <a href="/app" class="btn-hero-primary">
+              Get Started <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#preview" class="btn-hero-secondary">
+              <i class="bi bi-play-circle"></i> View Demo
+            </a>
+          </div>
+
+          <!-- Trusted by moved below hero -->
+        </div>
+
+        <!-- Dashboard mockup -->
+        <div class="hero-mockup-wrap">
+          <div class="hero-float-card card-1">
+            <i class="bi bi-graph-up-arrow" style="color: var(--emerald)"></i>
+            <div>
+              <div class="float-num">+24%</div>
+              <div class="float-up"><i class="bi bi-arrow-up-short"></i> Revenue</div>
+            </div>
+          </div>
+          <div class="hero-float-card card-2">
+            <i class="bi bi-calendar-check" style="color: var(--brand)"></i>
+            <div>
+              <div class="float-num">148</div>
+              <div style="font-size:0.6rem;color:var(--text-muted)">Appointments today</div>
+            </div>
+          </div>
+          <div class="hero-float-card card-3">
+            <i class="bi bi-person-badge-fill" style="color: var(--indigo)"></i>
+            <div>
+              <div class="float-num">24</div>
+              <div style="font-size:0.6rem;color:var(--text-muted)">Doctors Active</div>
+            </div>
+          </div>
+          <div class="hero-float-card card-4">
+            <i class="bi bi-people-fill" style="color: var(--sky)"></i>
+            <div>
+              <div class="float-num">1.2K</div>
+              <div style="font-size:0.6rem;color:var(--text-muted)">Patients Managed</div>
+            </div>
+          </div>
+
+          <div class="hero-mockup">
+            <div class="mockup-titlebar">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-sidebar">
+                <div class="mockup-nav-dot active"><i class="bi bi-grid-1x2-fill"></i></div>
+                <div class="mockup-nav-dot"><i class="bi bi-person-badge"></i></div>
+                <div class="mockup-nav-dot"><i class="bi bi-people"></i></div>
+                <div class="mockup-nav-dot"><i class="bi bi-calendar2-check"></i></div>
+                <div class="mockup-nav-dot"><i class="bi bi-building"></i></div>
+              </div>
+              <div class="mockup-main">
+                <div class="mockup-greeting">Good morning, Admin</div>
+                <div class="mockup-stats-row">
+                  <div class="mockup-stat">
+                    <div class="mockup-stat-num">24</div>
+                    <div class="mockup-stat-label">Doctors</div>
+                    <div class="mockup-stat-bar"><div class="mockup-stat-bar-fill" style="width:75%;background:var(--brand)"></div></div>
+                  </div>
+                  <div class="mockup-stat">
+                    <div class="mockup-stat-num">1.2K</div>
+                    <div class="mockup-stat-label">Patients</div>
+                    <div class="mockup-stat-bar"><div class="mockup-stat-bar-fill" style="width:60%;background:var(--emerald)"></div></div>
+                  </div>
+                  <div class="mockup-stat">
+                    <div class="mockup-stat-num">892</div>
+                    <div class="mockup-stat-label">Appointments</div>
+                    <div class="mockup-stat-bar"><div class="mockup-stat-bar-fill" style="width:85%;background:var(--indigo)"></div></div>
+                  </div>
+                </div>
+                <div class="mockup-chart-area">
+                  <div class="mockup-chart">
+                    <div class="mockup-chart-title">Weekly Overview</div>
+                    <div class="mockup-bars">
+                      <div class="mockup-bar" style="height:45%;background:var(--brand-subtle)"></div>
+                      <div class="mockup-bar" style="height:70%;background:var(--brand-subtle)"></div>
+                      <div class="mockup-bar" style="height:55%;background:var(--brand-subtle)"></div>
+                      <div class="mockup-bar" style="height:90%;background:var(--brand)"></div>
+                      <div class="mockup-bar" style="height:65%;background:var(--brand-subtle)"></div>
+                      <div class="mockup-bar" style="height:80%;background:var(--brand-subtle)"></div>
+                      <div class="mockup-bar" style="height:50%;background:var(--brand-subtle)"></div>
+                    </div>
+                  </div>
+                  <div class="mockup-appointments">
+                    <div class="mockup-appt-title">Upcoming</div>
+                    <div class="mockup-appt-item">
+                      <span class="mockup-appt-dot" style="background:var(--emerald)"></span>
+                      <span class="mockup-appt-name">Sarah K.</span>
+                      <span class="mockup-appt-time">09:00</span>
+                    </div>
+                    <div class="mockup-appt-item">
+                      <span class="mockup-appt-dot" style="background:var(--brand)"></span>
+                      <span class="mockup-appt-name">James R.</span>
+                      <span class="mockup-appt-time">09:30</span>
+                    </div>
+                    <div class="mockup-appt-item">
+                      <span class="mockup-appt-dot" style="background:var(--amber)"></span>
+                      <span class="mockup-appt-name">Priya M.</span>
+                      <span class="mockup-appt-time">10:00</span>
+                    </div>
+                    <div class="mockup-appt-item">
+                      <span class="mockup-appt-dot" style="background:var(--indigo)"></span>
+                      <span class="mockup-appt-name">Alex T.</span>
+                      <span class="mockup-appt-time">10:30</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Trusted By section placed within hero container bounds but below columns -->
+      <div class="container">
+        <div class="trusted-by reveal">
+          <div class="trusted-label">Trusted by leading healthcare providers</div>
+          <div class="trusted-logos">
+            <span>Apollo Hospitals</span>
+            <span>MediCare</span>
+            <span>CarePlus</span>
+            <span>NovaHealth</span>
+            <span>HealthOne</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TRUSTED STATISTICS
+         ═══════════════════════════════════════ -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-block reveal">
+            <div class="stat-block-num"><span data-count="50" data-suffix="+">0</span></div>
+            <div class="stat-block-label">Hospitals</div>
+          </div>
+          <div class="stat-block reveal reveal-delay-1">
+            <div class="stat-block-num"><span data-count="25" data-suffix="K+">0</span></div>
+            <div class="stat-block-label">Patients</div>
+          </div>
+          <div class="stat-block reveal reveal-delay-2">
+            <div class="stat-block-num"><span data-count="120" data-suffix="K+">0</span></div>
+            <div class="stat-block-label">Appointments</div>
+          </div>
+          <div class="stat-block reveal reveal-delay-3">
+            <div class="stat-block-num"><span data-count="99" data-suffix=".9%">0</span></div>
+            <div class="stat-block-label">System Uptime</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FEATURES
+         ═══════════════════════════════════════ -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="bi bi-stars"></i> Features</div>
+          <h2 class="section-title">Everything you need to run a modern hospital</h2>
+          <p class="section-subtitle">Powerful tools designed to streamline every aspect of healthcare management.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon blue"><i class="bi bi-people-fill"></i></div>
+            <div class="feature-title">Patient Management</div>
+            <p class="feature-desc">Complete patient records, history tracking, and profile management with instant access to critical information.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-1">
+            <div class="feature-icon green"><i class="bi bi-calendar2-check-fill"></i></div>
+            <div class="feature-title">Appointment Scheduling</div>
+            <p class="feature-desc">Smart scheduling system with availability management, conflict detection, and automated time slot management.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-2">
+            <div class="feature-icon indigo"><i class="bi bi-person-badge-fill"></i></div>
+            <div class="feature-title">Doctor Portal</div>
+            <p class="feature-desc">Dedicated dashboard for doctors to manage appointments, view patient history, and update treatment records.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-1">
+            <div class="feature-icon amber"><i class="bi bi-file-medical-fill"></i></div>
+            <div class="feature-title">Medical Records</div>
+            <p class="feature-desc">Secure digital records with diagnosis, prescriptions, and treatment notes — all searchable and exportable.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-2">
+            <div class="feature-icon sky"><i class="bi bi-building-fill"></i></div>
+            <div class="feature-title">Department Management</div>
+            <p class="feature-desc">Organize your hospital by departments, track doctor allocation, and manage specialization areas efficiently.</p>
+          </div>
+          <div class="feature-card reveal reveal-delay-3">
+            <div class="feature-icon violet"><i class="bi bi-graph-up-arrow"></i></div>
+            <div class="feature-title">Analytics Dashboard</div>
+            <p class="feature-desc">Real-time insights on hospital performance, patient trends, appointment metrics, and operational efficiency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         DASHBOARD PREVIEW
+         ═══════════════════════════════════════ -->
+    <section class="preview-section" id="preview">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="bi bi-display"></i> Dashboard Preview</div>
+          <h2 class="section-title">A dashboard you'll love to use</h2>
+          <p class="section-subtitle">Clean, intuitive, and powerful — designed for healthcare professionals who value their time.</p>
+        </div>
+
+        <div class="preview-wrap reveal">
+          <!-- Floating annotations -->
+          <div class="preview-float float-1">
+            <div class="preview-float-title">Monthly Patients</div>
+            <div class="preview-float-value">2,847</div>
+            <div class="preview-float-change"><i class="bi bi-arrow-up-short"></i> 12.5% from last month</div>
+          </div>
+          <div class="preview-float float-2">
+            <div class="preview-float-title">Satisfaction Rate</div>
+            <div class="preview-float-value">98.2%</div>
+            <div class="preview-float-change"><i class="bi bi-arrow-up-short"></i> 3.1% improvement</div>
+          </div>
+
+          <div class="preview-img">
+            <div class="preview-titlebar">
+              <span class="mockup-dot red"></span>
+              <span class="mockup-dot yellow"></span>
+              <span class="mockup-dot green"></span>
+            </div>
+            <div class="preview-content">
+              <div class="preview-sidebar">
+                <div class="preview-sidebar-brand">Hos<span>pix</span></div>
+                <div class="preview-nav-item active"><i class="bi bi-grid-1x2-fill"></i> Overview</div>
+                <div class="preview-nav-item"><i class="bi bi-person-badge-fill"></i> Doctors</div>
+                <div class="preview-nav-item"><i class="bi bi-people-fill"></i> Patients</div>
+                <div class="preview-nav-item"><i class="bi bi-calendar2-check-fill"></i> Appointments</div>
+                <div class="preview-nav-item"><i class="bi bi-building-fill"></i> Departments</div>
+                <div class="preview-nav-item"><i class="bi bi-search"></i> Search</div>
+              </div>
+              <div class="preview-main">
+                <div class="preview-main-title">Good morning, Admin</div>
+                <div class="preview-main-sub">Here is a summary of hospital activity.</div>
+
+                <div class="preview-stats">
+                  <div class="preview-stat-card">
+                    <div class="preview-stat-icon" style="background:var(--brand-light);color:var(--brand)"><i class="bi bi-person-badge-fill"></i></div>
+                    <div class="preview-stat-val">24</div>
+                    <div class="preview-stat-label">Total Doctors</div>
+                  </div>
+                  <div class="preview-stat-card">
+                    <div class="preview-stat-icon" style="background:#f0f9ff;color:var(--sky)"><i class="bi bi-people-fill"></i></div>
+                    <div class="preview-stat-val">1,248</div>
+                    <div class="preview-stat-label">Patients</div>
+                  </div>
+                  <div class="preview-stat-card">
+                    <div class="preview-stat-icon" style="background:var(--indigo-light);color:var(--indigo)"><i class="bi bi-calendar2-check-fill"></i></div>
+                    <div class="preview-stat-val">892</div>
+                    <div class="preview-stat-label">Appointments</div>
+                  </div>
+                </div>
+
+                <div class="preview-bottom">
+                  <div class="preview-table-card">
+                    <div class="preview-table-title">Recent Appointments</div>
+                    <div class="preview-table-row">
+                      <div class="preview-table-avatar" style="background:linear-gradient(135deg,var(--brand),var(--indigo))">SK</div>
+                      <div class="preview-table-name">Sarah Khan</div>
+                      <div class="preview-table-badge" style="background:#dcfce7;color:#15803d">Completed</div>
+                    </div>
+                    <div class="preview-table-row">
+                      <div class="preview-table-avatar" style="background:linear-gradient(135deg,var(--emerald),var(--sky))">JR</div>
+                      <div class="preview-table-name">James Rodriguez</div>
+                      <div class="preview-table-badge" style="background:var(--brand-subtle);color:var(--brand-dark)">Booked</div>
+                    </div>
+                    <div class="preview-table-row">
+                      <div class="preview-table-avatar" style="background:linear-gradient(135deg,var(--amber),#f97316)">PM</div>
+                      <div class="preview-table-name">Priya Mehta</div>
+                      <div class="preview-table-badge" style="background:var(--brand-subtle);color:var(--brand-dark)">Booked</div>
+                    </div>
+                    <div class="preview-table-row">
+                      <div class="preview-table-avatar" style="background:linear-gradient(135deg,var(--violet),var(--rose))">AT</div>
+                      <div class="preview-table-name">Alex Turner</div>
+                      <div class="preview-table-badge" style="background:#dcfce7;color:#15803d">Completed</div>
+                    </div>
+                  </div>
+
+                  <div class="preview-chart-card">
+                    <div class="preview-chart-title">Weekly Appointments</div>
+                    <div class="preview-mini-bars">
+                      <div class="preview-mini-bar" style="height:40%;background:var(--brand-subtle)"></div>
+                      <div class="preview-mini-bar" style="height:65%;background:var(--brand-subtle)"></div>
+                      <div class="preview-mini-bar" style="height:50%;background:var(--brand-subtle)"></div>
+                      <div class="preview-mini-bar" style="height:85%;background:var(--brand)"></div>
+                      <div class="preview-mini-bar" style="height:70%;background:var(--brand-subtle)"></div>
+                      <div class="preview-mini-bar" style="height:55%;background:var(--brand-subtle)"></div>
+                      <div class="preview-mini-bar" style="height:35%;background:var(--brand-subtle)"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         WHY CHOOSE HOSPIX
+         ═══════════════════════════════════════ -->
+    <section class="why-section" id="why">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="bi bi-trophy"></i> Why Hospix</div>
+          <h2 class="section-title">Built different. Built better.</h2>
+          <p class="section-subtitle">Three pillars that make Hospix the preferred choice for modern healthcare.</p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card reveal">
+            <div class="why-icon" style="background:var(--brand-light);color:var(--brand)">
+              <i class="bi bi-lightning-charge-fill"></i>
+            </div>
+            <div class="why-title">Blazing Fast</div>
+            <p class="why-desc">Sub-second load times and instant search. Your team spends time caring for patients, not waiting for software.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-1">
+            <div class="why-icon" style="background:var(--emerald-light);color:var(--emerald)">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <div class="why-title">Enterprise Secure</div>
+            <p class="why-desc">Role-based access control, encrypted data storage, and audit trails. Your patient data is protected at every layer.</p>
+          </div>
+          <div class="why-card reveal reveal-delay-2">
+            <div class="why-icon" style="background:var(--violet-light);color:var(--violet)">
+              <i class="bi bi-hand-thumbs-up-fill"></i>
+            </div>
+            <div class="why-title">Effortlessly Simple</div>
+            <p class="why-desc">Intuitive design that your staff learns in minutes, not months. No training manuals needed — just start working.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TESTIMONIALS
+         ═══════════════════════════════════════ -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="bi bi-chat-quote"></i> Testimonials</div>
+          <h2 class="section-title">Loved by healthcare teams</h2>
+          <p class="section-subtitle">See what hospitals and clinics say about Hospix.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">"Hospix transformed how we manage our 200-bed hospital. The dashboard gives me real-time visibility into every department. We reduced administrative overhead by 40% in the first quarter."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--brand),var(--indigo))">SM</div>
+              <div>
+                <div class="testimonial-name">Dr. Sarah Mitchell</div>
+                <div class="testimonial-role">Chief Medical Officer, Metro General</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-1">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">"The appointment scheduling alone saved us 4 hours of coordination daily. I can see my patient history, write prescriptions, and manage my calendar from one clean interface."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--emerald),var(--sky))">JR</div>
+              <div>
+                <div class="testimonial-name">James Rodriguez</div>
+                <div class="testimonial-role">Hospital Administrator, City Care</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card reveal reveal-delay-2">
+            <div class="testimonial-stars">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-text">"Intuitive interface that our entire front desk team learned in minutes. No more double bookings, no more lost records. Hospix just works — exactly when you need it to."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar" style="background:linear-gradient(135deg,var(--amber),#f97316)">PS</div>
+              <div>
+                <div class="testimonial-name">Priya Sharma</div>
+                <div class="testimonial-role">Front Desk Manager, Sunrise Clinic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FAQ
+         ═══════════════════════════════════════ -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-tag"><i class="bi bi-question-circle"></i> FAQ</div>
+          <h2 class="section-title">Frequently asked questions</h2>
+          <p class="section-subtitle">Everything you need to know about Hospix.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item active reveal">
+            <button class="faq-question">
+              What is Hospix?
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Hospix is a modern hospital management platform that helps healthcare organizations manage patients, appointments, doctors, departments, and medical records from a single, intuitive dashboard. It's built for speed, security, and ease of use.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-1">
+            <button class="faq-question">
+              How does appointment scheduling work?
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Doctors set their availability for the next 7 days. Patients can browse available doctors by specialization, select a date and time slot, and book instantly. The system automatically prevents double bookings and sends notifications.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-2">
+            <button class="faq-question">
+              Is my hospital data secure?
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Absolutely. Hospix uses role-based access control with separate admin, doctor, and patient portals. All passwords are securely hashed, sessions are protected, and patient data is accessible only to authorized personnel.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-3">
+            <button class="faq-question">
+              What roles are supported?
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Hospix supports three roles: Administrators (full hospital management), Doctors (appointments, patients, availability, treatment records), and Patients (doctor search, booking, medical history, profile management).
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-4">
+            <button class="faq-question">
+              Can I export patient records?
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. Patients can export their complete treatment history as a CSV file, including dates, doctor names, diagnoses, prescriptions, and clinical notes. Administrators also have access to comprehensive reporting tools.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal reveal-delay-5">
+            <button class="faq-question">
+              How do I get started?
+              <i class="bi bi-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Getting started is simple — create an account as a patient, or contact your hospital administrator for doctor and admin access. The platform requires zero installation and works entirely in your browser.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CTA SECTION
+         ═══════════════════════════════════════ -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <h2 class="cta-title">Ready to modernize<br />your hospital?</h2>
+          <p class="cta-subtitle">Join hundreds of healthcare providers already using Hospix to deliver better patient care.</p>
+          <a href="/app" class="btn-cta">
+            Get Started Free <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════ -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">hos<span>pix</span></div>
+            <p class="footer-desc">Modern hospital management platform built for faster healthcare. Streamline operations, improve patient care.</p>
+          </div>
+          <div>
+            <div class="footer-col-title">Product</div>
+            <ul class="footer-links">
+              <li><a href="#features">Features</a></li>
+              <li><a href="#preview">Dashboard</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/app">Get Started</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Resources</div>
+            <ul class="footer-links">
+              <li><a href="#faq">Help Center</a></li>
+              <li><a href="#features">Documentation</a></li>
+              <li><a href="#testimonials">Case Studies</a></li>
+              <li><a href="#">API Reference</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Contact</div>
+            <ul class="footer-links">
+              <li><a href="#">hello@hospix.in</a></li>
+              <li><a href="#">+91 98765 43210</a></li>
+              <li><a href="#">Mumbai, India</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copy">&copy; 2026 Hospix. All rights reserved.</div>
+          <div class="footer-socials">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+  </body>
+</html>
