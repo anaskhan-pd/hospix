@@ -1,49 +1,73 @@
 # Hospix
-Modern Healthcare Operations Platform
 
-A modern, SaaS-inspired hospital management platform designed to streamline operations, appointment scheduling, and patient workflows.
+## Modern Healthcare Operations Platform
+
+Hospix is a modern, SaaS-inspired Hospital Management Platform built to simplify patient management, appointment scheduling, doctor workflows, and administrative operations through a clean and responsive interface.
 
 ---
 
-## Screenshots
+## Demo
 
-| Landing Page (Light) | Landing Page (Dark) |
-|:---:|:---:|
-| ![Landing Page Light Placeholder](#) | ![Landing Page Dark Placeholder](#) |
-
-| Dashboard (Light) | Dashboard (Dark) |
-|:---:|:---:|
-| ![Dashboard Light Placeholder](#) | ![Dashboard Dark Placeholder](#) |
-
-*(Add screenshots by replacing the placeholder links above)*
+<p align="center">
+    <img src="./screenshots/Hospix-demo.gif" alt="Hospix Demo" width="100%">
+</p>
 
 ---
 
 ## Features
 
-- **Light & Dark Theme** — Seamless theme toggling on the landing page
-- **Patient Management** — View and manage complete patient profiles and treatment histories
-- **Appointment Scheduling** — Smart scheduling with real-time doctor availability and conflict detection
-- **Doctor Management** — Dedicated views for doctors to manage schedules, update diagnoses, and write prescriptions
-- **Analytics Dashboard** — Centralized overview of hospital operations, staff allocation, and departments
-- **Secure Authentication** — Role-based access control (RBAC) with distinct portals for Admins, Doctors, and Patients
-- **Smooth User Experience** — Background jobs automate daily email reminders and monthly performance reports
-- **Performance Caching** — Redis-backed caching for rapid API responses
-- **Responsive Design** — Custom, premium SaaS-inspired design system 
+- Modern SaaS-inspired Landing Page
+- Light & Dark Theme Support
+- Role-Based Authentication (Admin, Doctor, Patient)
+- Patient Management System
+- Appointment Scheduling
+- Doctor Dashboard
+- Analytics Dashboard
+- Responsive Design System
+- Redis-Based Performance Caching
+- Background Jobs using Celery
+- Automated Email Reminders and Reports
+
+---
+
+## Screenshots
+
+### Landing Page
+
+<p align="center">
+    <img src="./screenshots/1.png" alt="Landing Page" width="95%">
+</p>
+
+---
+
+### Landing Dark
+
+<p align="center">
+    <img src="./screenshots/2.png" alt="Landing dark" width="95%">
+</p>
+
+---
+
+### Appointments Portal
+
+<p align="center">
+    <img src="./screenshots/3.png" alt="Appointments" width="95%">
+</p>
 
 ---
 
 ## Tech Stack
 
 | Component | Technology |
-|---|---|
-| **Backend** | Python Flask |
-| **Frontend** | Vue.js 3 (CDN), Custom CSS (Design System) |
-| **Database** | SQLite via SQLAlchemy ORM |
-| **Caching** | Redis (Flask-Caching) |
-| **Background Jobs** | Celery + Redis |
-| **Email Testing** | MailHog |
-| **Version Control** | Git |
+|------------|-----------------------------|
+| Backend | Python Flask |
+| Frontend | Vue.js 3 (CDN), HTML5, CSS3, JavaScript |
+| Database | SQLite (SQLAlchemy ORM) |
+| Caching | Redis (Flask-Caching) |
+| Background Jobs | Celery + Redis |
+| Email Testing | MailHog |
+| Styling | Custom Design System |
+| Version Control | Git & GitHub |
 
 ---
 
@@ -51,36 +75,28 @@ A modern, SaaS-inspired hospital management platform designed to streamline oper
 
 ```text
 hospital-management-system/
+│
 ├── backend/
-│   ├── app.py              # Main Flask app & API routes
-│   ├── config.py           # Application configurations
-│   ├── extensions.py       # SQLAlchemy & Cache instances
-│   ├── tasks.py            # Celery background jobs
-│   ├── models/             # Database ORM models
-│   │   ├── appointment.py  
-│   │   ├── department.py   
-│   │   ├── doctor.py       
-│   │   ├── patient.py      
-│   │   ├── treatment.py    
-│   │   └── user.py         
+│   ├── app.py
+│   ├── config.py
+│   ├── extensions.py
+│   ├── tasks.py
+│   ├── models/
 │   ├── routes/
-│   │   └── auth.py         # Authentication logic
 │   └── utils/
-│       └── admin.py        # Admin seeder script
+│
 ├── frontend/
 │   ├── static/
 │   │   ├── css/
-│   │   │   ├── landing.css # Landing page styling
-│   │   │   └── style.css   # Dashboard design system
 │   │   └── js/
-│   │       ├── admin.js    # Admin portal logic
-│   │       ├── app.js      # Global Vue application logic
-│   │       ├── doctor.js   # Doctor portal logic
-│   │       ├── landing.js  # Landing interactions
-│   │       └── patient.js  # Patient portal logic
 │   └── templates/
-│       ├── index.html      # Vue dashboard entrypoint
-│       └── landing.html    # Pre-auth landing page
+│
+├── screenshots/
+│   ├── 1.png
+│   ├── 2.png
+│   ├── 3.png
+│   └── hospix-demo.gif
+│
 └── README.md
 ```
 
@@ -88,50 +104,70 @@ hospital-management-system/
 
 ## Installation
 
-### 1. Clone the repository
+### Clone the repository
+
 ```bash
-git clone https://github.com/yourusername/hospix.git
+git clone https://github.com/anaskhan-pd/hospix.git
+
 cd hospix
 ```
 
-### 2. Create and activate a virtual environment
-**Windows:**
+### Create a virtual environment
+
+**Windows**
+
 ```bash
 python -m venv venv
+
 venv\Scripts\activate
 ```
-**macOS/Linux:**
+
+**macOS / Linux**
+
 ```bash
 python3 -m venv venv
+
 source venv/bin/activate
 ```
 
-### 3. Install requirements
+### Install dependencies
+
 ```bash
 pip install -r backend/requirements.txt
 ```
 
-### 4. Start supporting services (Docker)
-You need Redis for caching/Celery, and MailHog for testing emails.
+### Start supporting services
+
+Redis
+
 ```bash
 docker run -d -p 6379:6379 --name redis-hms redis
+```
+
+MailHog
+
+```bash
 docker run -d -p 1025:1025 -p 8025:8025 --name mailhog mailhog/mailhog
 ```
 
-### 5. Run the application
-Open 3 separate terminals within the `backend/` directory:
+### Start the application
 
-**Terminal 1 — Flask Server:**
+Run three terminals inside the backend directory.
+
+**Terminal 1**
+
 ```bash
 python app.py
 ```
 
-**Terminal 2 — Celery Worker:**
+**Terminal 2**
+
 ```bash
 python -m celery -A tasks:celery worker --loglevel=info --pool=solo
 ```
 
-**Terminal 3 — Celery Beat Scheduler:**
+**Terminal 3**
+
 ```bash
 python -m celery -A tasks:celery beat --loglevel=info
 ```
@@ -140,52 +176,86 @@ python -m celery -A tasks:celery beat --loglevel=info
 
 ## Usage
 
-Once the servers are running, access the application:
+Application
 
-1. **Web Application:** Navigate to `http://localhost:5000`
-2. **MailHog Inbox:** Navigate to `http://localhost:8025` (To view sent reminders and reports)
+```
+http://localhost:5000
+```
 
-**Default Admin Credentials:**
-- **Email:** `admin@hospix.in`
-- **Password:** `admin@123`
+MailHog
 
-Patients can self-register from the login page. Doctors must be added by an Admin.
+```
+http://localhost:8025
+```
+
+### Default Admin Credentials
+
+```
+Email: admin@hospix.in
+Password: admin@123
+```
+
+Patients can register directly from the login page.
+
+Doctors are created through the Admin portal.
 
 ---
 
 ## Design Philosophy
 
-Hospix intentionally moves away from traditional, bulky enterprise software interfaces. It implements a modern SaaS-inspired design language—drawing heavy inspiration from industry leaders like Linear, Stripe, and Vercel. 
+Hospix was redesigned using a modern SaaS design language inspired by contemporary software platforms while maintaining healthcare usability and accessibility.
 
-Key design elements include:
-- Minimalist, distraction-free layouts
-- Purpose-driven typography
-- Subtle micro-interactions and smooth keyframe animations
-- A comprehensive custom CSS design system tailored for healthcare usability without sacrificing aesthetic quality.
+The interface focuses on:
+
+- Consistent spacing and typography
+- Responsive layouts
+- Light and Dark themes
+- Minimal visual hierarchy
+- Smooth micro-interactions
+- Clean dashboard experience
+
+The goal is to provide a modern product experience instead of a traditional enterprise hospital interface.
 
 ---
 
-## Future Improvements
+## Roadmap
 
-- [ ] Email notifications
-- [ ] Multi-hospital support
-- [ ] AI appointment assistant
-- [ ] Advanced analytics
-- [ ] PWA support
+- [ ] Multi-Hospital Support
+- [ ] AI Appointment Assistant
+- [ ] Advanced Analytics
+- [ ] Progressive Web App
+- [ ] Export & Reporting Module
+- [ ] Real-time Notifications
 
 ---
 
 ## Contributing
 
-Contributions are welcome! If you'd like to improve Hospix, please follow these steps:
+Contributions are welcome.
+
 1. Fork the repository.
-2. Create a new feature branch (`git checkout -b feature/amazing-feature`).
-3. Commit your changes (`git commit -m 'Add some amazing feature'`).
-4. Push to the branch (`git push origin feature/amazing-feature`).
+2. Create a feature branch.
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Commit your changes.
+
+```bash
+git commit -m "Add new feature"
+```
+
+4. Push to your branch.
+
+```bash
+git push origin feature/new-feature
+```
+
 5. Open a Pull Request.
 
 ---
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
